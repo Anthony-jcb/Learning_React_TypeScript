@@ -1,33 +1,45 @@
-const initialDb = [
+import { useState } from "react";
+import Form from "./Form";
+import Table from "./Table";
+
+const initialDb: { id: number; name: string; stars: number }[] = [
   {
     id: 1,
-    name: "Tommy",
-    role: "Boss",
+    name: "Typescript",
+    stars: 136,
   },
   {
     id: 2,
-    name: "Arthur",
-    role: "Peaky Blinder",
+    name: "Python",
+    stars: 3159,
   },
   {
     id: 3,
-    name: "John",
-    role: "Peaky Blinder",
+    name: "Go",
+    stars: 55,
   },
   {
     id: 4,
-    name: "Michael",
-    role: "Legal Bussines",
+    name: "Rust",
+    stars: 33,
   },
   {
     id: 5,
-    name: "Poly",
-    role: "Treasurer",
+    name: "Solidity",
+    stars: 12001,
   },
 ];
 
 function Functions() {
-  return <></>;
+  const [response, setResponse] = useState(initialDb);
+
+  return (
+    <>
+      <h2>CRUD APP</h2>
+      <Form />
+      <Table data={response} />
+    </>
+  );
 }
 
 export default Functions;
